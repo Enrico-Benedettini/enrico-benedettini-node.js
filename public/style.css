@@ -1,0 +1,489 @@
+/* General variables */
+:root {
+    --background:rgb(0, 136, 255);
+    --text:rgb(255, 255, 255);
+    --background-button:rgb(0, 247, 255);
+    --background-button-hover:rgb(0, 183, 255);
+    --text-button:rgb(0, 0, 0);
+    --background-header-begin:rgb(0, 72, 255);
+    --background-header-end:rgb(0, 4, 255);
+    --background-card-begin:rgba(0, 149, 255, 0.7);
+    --background-card-end:rgba(0, 4, 255, 1);
+    --background-home:rgb(241, 241, 241);
+    --background-hover:rgb(220, 220, 220);
+    --background-selected:rgb(0, 92, 172);
+    --border-line:rgb(0, 255, 234);
+    --background-first-section:var(--background-home);
+    --text-first-section:rgb(0, 0, 0);
+    --background-second-section:rgb(230, 230, 230);
+    --text-second-section:rgb(20, 20, 20);
+    --background-minigames:rgb(240, 120, 0);
+    --text-minigames:rgb(0, 240, 160);
+    --text-skills:rgb(255, 255, 255);
+    --background-footer-begin:rgb(0, 255, 234);
+    --background-footer-end:rgb(0, 183, 255);
+    --link-text:rgb(30, 30, 30);
+    --hover-text:rgb(90, 90, 90);
+    --text-home:rgb(0, 0, 0);
+}
+
+/* Default settings for the whole page */
+body {
+    background-color: var(--background);
+}
+
+a {
+    color: var(--link-text);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--hover-text);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--text);
+}
+
+h1 {
+    font-size: 50px;
+}
+
+p {
+    margin: 0;
+    text-align: center;
+}
+
+.border-line-l {
+    padding: 20px;
+    border-left: 1px solid var(--border-line)
+}
+
+.border-line-r {
+    padding: 20px;
+    border-right: 1px solid var(--border-line)
+}
+/* **********         CSS for navbar         ********** */
+.navbar {
+    background-color: var(--background);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    justify-content: space-between; /* Distribute the links across the full width */
+    transition: top 0.3s ease-in-out;
+}
+
+.navbar-content {
+    grid-column: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center the navbar content horizontally */
+    margin: 0 auto; /* Add auto margin to center the content within the navbar */  
+}
+
+.navbar > div > a {
+    display: block;
+    color: var(--background-home);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    flex-grow: 1; /* Allow the links to flex and fill the available space */
+}
+
+.navbar > div > a:hover {
+    background-color: var(--background-hover);
+    color: var(--text-home);
+    text-shadow: 0 0 0;
+}
+
+.active {
+    background-color: var(--background-selected);
+    color: var(--text);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.shadow {
+    box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.8);
+}
+
+/* **********       CSS for Night-mode       ********** */
+.night-mode-container {
+    grid-column: 3;
+    padding: 7.5px 15px;
+    text-align: right;
+}
+/* **********    End of CSS for Night-mode   ********** */
+
+/* **********      End of CSS for navbar     ********** */
+
+
+/* **********         CSS for header         ********** */
+.header {
+    padding: 20px;
+    background-color: var(--background-header);
+    background-image: linear-gradient(to top right, var(--background-header-begin),var(--background-header-end));
+}
+
+.profile-picture {
+    width: 150px; /* Adjust the width and height based on your preference */
+    height: 150px;
+    border-radius: 50%; /* Create a circular shape */
+    overflow: hidden; /* Hide any overflowing content */
+    height: auto;
+    object-fit: cover; /* Ensure the image covers the entire space within the circle */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    grid-column: 1;
+    margin-right: 25px;
+}
+
+.header > .container {
+    display: flex;
+    flex-direction: row;
+}
+
+.header > .container > h1 {
+    line-height: 2;
+    grid-column: 3;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+/* **********       End of CSS for header      ********** */
+
+
+/* **********         CSS for sections         ********** */
+section {
+    min-height: 15vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-home);
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.container {
+    max-width: 70%;
+    margin: 0 auto;
+}
+/* **********      End of CSS for sections     ********** */
+
+/*       Additional styling for individual sections       */
+#home {
+    background-color: var(--background-first-section);
+    color: var(--text-first-section);
+}
+
+#home > .container > div { 
+    display: flex;
+    flex-direction: column;
+}
+
+.job-title {
+    font-size: 34px;
+}
+
+.job-title-desc {
+    margin: 0;
+}
+
+#about {
+    background-color: var(--background-second-section);
+    color: var(--text-second-section);
+}
+
+#education {
+    background-color: var(--background-first-section);
+    color: var(--text-first-section);
+}
+
+/* **********      CSS for skills' section     ********** */
+#skills {
+    background-color: var(--background-second-section);
+    color: var(--text-second-section);
+    padding-bottom: 60px;
+}
+
+#skills > .container {
+    display: grid;
+    grid-template-columns: 2fr 10fr 2fr;
+}
+
+#skills > .container > h2 {
+    grid-column: 2;
+}
+
+.skills {
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: 10fr 1fr 10fr;
+}
+
+.card {
+    width: 300px;
+    height: 300px;
+    perspective: 1000px; /* Perspective value for 3D transforms */
+    position: relative;
+    margin: 50px;
+    right: 10px; /* Modifies position of elements with relative position */
+    margin-bottom: 40px;
+    color: var(--text-skills);
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: absolute;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(-180deg);
+}
+
+.card:nth-child(2n) { /* Apply changes to the right column, 
+    by choosing only even children with class card */
+    /* right: 50px; */
+}
+
+.card-front,
+.card-back {
+    background-image: linear-gradient(to bottom right,
+    var(--background-card-begin),var(--background-card-end));
+    padding: 30px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+  
+.card-back {
+    transform: rotateY(-180deg);
+}
+
+#skill1 {
+    grid-column: 1;
+}
+#skill2 {
+    grid-column: 3;
+}
+#skill3 {
+    grid-column: 1;
+}
+#skill4 {
+    grid-column: 3;
+}
+#skill5 {
+    grid-column: 1;
+}
+#skill6 {
+    grid-column: 3;
+}
+/* **********  End of CSS for skills' section  ********** */
+
+
+/* **********     CSS for projects' section    ********** */
+#projects {
+    background-color: var(--background-first-section);
+    color: var(--text-first-section);
+}
+
+#projects > .container > br {
+    border: 3px solid;
+}
+
+.project {
+    padding: 20px;
+    border-top: 2px solid var(--text-home);
+}
+
+.project-desc {
+    margin-bottom: 10px;
+}
+/* ********** End of CSS for projects' section ********** */
+
+
+/* **********   CSS for experiences' section   ********** */
+#experience {
+    background-color: var(--background-second-section);
+    color: var(--text-second-section);
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+}
+
+.headline {
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    margin: 10px 0;
+}
+
+.title {
+    grid-column: 1;
+    font-size: 22px;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.language {
+    grid-column: 2;
+    text-align: right;
+    vertical-align: middle;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.experience iframe {
+    width: 150px;
+    height: 150px;
+}
+
+.description-right, .description-left {
+    margin: 0;
+    text-align: left;
+}
+
+.description-right {
+    padding-left: 25px;
+}
+
+.description-left {
+    padding-right: 25px;
+}
+/* ********  End of CSS for experiences' section  ******** */
+
+/* **********     CSS for minigames' section    ********** */
+#minigames {
+    background-color: var(--background-minigames);
+    color: var(--text-minigames);
+}
+
+.games {
+    display: grid;
+    grid-template-columns: 1fr 4fr 4fr 1fr;
+}
+
+.left {
+    grid-column: 2;
+}
+
+.right {
+    grid-column: 3;
+}
+/* **********    CSS for utilities' section    ********** */
+#utilities {
+    background-color: var(--background-first-section);
+    color: var(--text-first-section);
+}
+
+.util {
+    display: flex;
+    flex-direction: column;
+}
+
+.util-content {
+    display: grid;
+    grid-template-columns: 5fr 8fr 5fr;
+}
+
+.source {
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.source p, .result p {
+    margin: 5px;
+}
+
+textarea[name="source"] {
+    flex: 1 0 auto;
+    resize: none;
+}
+
+.company-data {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    grid-column: 2;
+    padding: 0 15px;
+}
+
+.result {
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+textarea[name="result"] {
+    flex: 1 0 auto;
+    resize: none;
+}
+
+button.download {
+    background-color: var(--background-first-section);
+    border: 0;
+    font-size: medium;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.data-piece {
+    margin: 5px;
+}
+
+input[name="insert"] {
+    background-color: var(--background-button);
+    font-weight: bold;
+    color: var(--text-button);
+    padding: 5px;
+    font-size: large;
+    margin-top: 10px;
+    border: 2px solid var(--text-button);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+input[name="insert"]:hover {
+    background-color: var(--background-button-hover);
+}
+/* ********   End of CSS for utilities' section  ******** */
+
+/* **********     CSS for contacts' section    ********** */
+#contact {
+    display: block;
+    background-image: linear-gradient(to bottom right, var(--background-footer-begin),var(--background-footer-end));
+}
+
+#contact > .container {
+    display: grid;
+    grid-template-columns: 4fr 1fr 4fr;
+}
+
+.contacts {
+    grid-column: 1;
+    text-align: left;
+    align-items: flex-start;
+}
+
+.contacts > p {
+    margin: 5px 0;
+    text-align: left;
+}
+/* ********** End of CSS for contacts' section ********** */

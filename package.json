@@ -1,0 +1,15 @@
+{
+  "name": "enrico-benedettini.node",
+  "version": "1.0.0",
+  "description": "My Personal Web Application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Enrico Benedettini",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "http-errors": "^2.0.0"
+  }
+}
